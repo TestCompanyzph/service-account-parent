@@ -1,0 +1,9 @@
+[submodule "service-configuration"]
+	path = service-configuration
+	url = https://github.com/TestCompanyzph/service-configuration.git
+[submodule "service-entity"]
+	path = service-entity
+	url = https://github.com/TestCompanyzph/service-entity.git
+[submodule "service-common"]
+	path = service-common
+	url = https://github.com/TestCompanyzph/service-common.git

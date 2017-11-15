@@ -6,17 +6,26 @@
 	<groupId>com.zph.usedCar</groupId>
 	<artifactId>service-account-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
 	<name>service-account-parent</name>
 	<description>用户模块</description>
 
+	<modules>
+        <module>service-common</module>
+        <module>service-entity</module>
+        <module>service-configuration</module>
+        <module>service-account</module>
+    </modules>
+
+	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.8.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
