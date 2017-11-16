@@ -1,6 +1,9 @@
 package com.zph.usedCar.account.controller;
 
 import com.zph.usedCar.entity.test.TestEntity;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,8 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/test")
+@Api(value = "tests", description = "测试接口", produces = MediaType.APPLICATION_JSON_VALUE)
 public class TestController {
 
+    @ApiOperation(value = "test接口", notes = "测试专用")
     @RequestMapping(value = "test", method = RequestMethod.GET)
     public TestEntity test(){
         TestEntity testEntity = new TestEntity();
