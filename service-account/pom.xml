@@ -87,9 +87,24 @@
 			<version>2.2.2</version>
 		</dependency>
 
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.21</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
+		<filters>
+			<filter>src/main/config/${env.name}/jdbc.properties</filter>
+		</filters>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -97,4 +112,23 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<env.name>dev</env.name>
+			</properties>
+		</profile>
+		<profile>
+			<id>product</id>
+			<properties>
+				<env.name>product</env.name>
+			</properties>
+		</profile>
+	</profiles>
+
 </project>
